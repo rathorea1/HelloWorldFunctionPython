@@ -4,23 +4,17 @@ pipeline {
     PIPELINE_USER_CREDENTIAL_ID = 'aws-access'
     SAM_TEMPLATE = 'template.yaml'
     MAIN_BRANCH = 'main'
+
     TESTING_STACK_NAME = 'python-test'
     TESTING_PIPELINE_EXECUTION_ROLE = 'arn:aws:iam::829511097656:role/aws-sam-cli-managed-dev-pipe-PipelineExecutionRole-VVBDUN8394WS'
     TESTING_CLOUDFORMATION_EXECUTION_ROLE = 'arn:aws:iam::829511097656:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionR-11BUCQAOUDWPE'
     TESTING_ARTIFACTS_BUCKET = 'aws-sam-cli-managed-dev-pipeline-artifactsbucket-1s2rvs8an8zzj'
-    // If there are functions with "Image" PackageType in your template,
-    // uncomment the line below and add "--image-repository ${TESTING_IMAGE_REPOSITORY}" to
-    // testing "sam package" and "sam deploy" commands.
-    // TESTING_IMAGE_REPOSITORY = '0123456789.dkr.ecr.region.amazonaws.com/repository-name'
     TESTING_REGION = 'us-east-1'
+
     PROD_STACK_NAME = 'python-app'
     PROD_PIPELINE_EXECUTION_ROLE = 'arn:aws:iam::829511097656:role/aws-sam-cli-managed-dev-pipe-PipelineExecutionRole-VVBDUN8394WS'
     PROD_CLOUDFORMATION_EXECUTION_ROLE = 'arn:aws:iam::829511097656:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionR-11BUCQAOUDWPE'
     PROD_ARTIFACTS_BUCKET = 'aws-sam-cli-managed-dev-pipeline-artifactsbucket-1s2rvs8an8zzj'
-    // If there are functions with "Image" PackageType in your template,
-    // uncomment the line below and add "--image-repository ${PROD_IMAGE_REPOSITORY}" to
-    // prod "sam package" and "sam deploy" commands.
-    // PROD_IMAGE_REPOSITORY = '0123456789.dkr.ecr.region.amazonaws.com/repository-name'
     PROD_REGION = 'us-east-1'
   }
   stages {
