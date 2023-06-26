@@ -69,7 +69,6 @@ pipeline {
         withAWS(
             credentials: env.PIPELINE_USER_CREDENTIAL_ID,
             region: env.TESTING_REGION,
-            role: env.TESTING_PIPELINE_EXECUTION_ROLE,
             roleSessionName: 'testing-packaging') {
           sh '''
             venv/bin/sam package \
@@ -106,7 +105,6 @@ pipeline {
         withAWS(
             credentials: env.PIPELINE_USER_CREDENTIAL_ID,
             region: env.TESTING_REGION,
-            role: env.TESTING_PIPELINE_EXECUTION_ROLE,
             roleSessionName: 'testing-deployment') {
           sh '''
             venv/bin/sam deploy --stack-name ${TESTING_STACK_NAME} \
